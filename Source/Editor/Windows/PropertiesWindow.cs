@@ -1,6 +1,5 @@
 // Copyright (c) 2012-2024 Wojciech Figat. All rights reserved.
 
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Xml;
@@ -15,13 +14,13 @@ namespace FlaxEditor.Windows
     /// <summary>
     /// Window used to present collection of selected object(s) properties in a grid. Supports Undo/Redo operations.
     /// </summary>
-    /// <seealso cref="FlaxEditor.Windows.EditorWindow" />
-    /// <seealso cref="FlaxEditor.Windows.SceneEditorWindow" />
+    /// <seealso cref="EditorWindow" />
+    /// <seealso cref="SceneEditorWindow" />
     public class PropertiesWindow : SceneEditorWindow, IPresenterOwner
     {
         private IEnumerable<object> undoRecordObjects;
 
-        private readonly Dictionary<Guid, float> _actorScrollValues = new Dictionary<Guid, float>();
+        private readonly Dictionary<System.Guid, float> _actorScrollValues = new Dictionary<System.Guid, float>();
 
         /// <inheritdoc />
         public override bool UseLayoutData => true;
@@ -66,7 +65,7 @@ namespace FlaxEditor.Windows
         }
 
         /// <inheritdoc />
-        public override void OnSceneLoaded(Scene scene, Guid sceneId)
+        public override void OnSceneLoaded(Scene scene, System.Guid sceneId)
         {
             base.OnSceneLoaded(scene, sceneId);
 
