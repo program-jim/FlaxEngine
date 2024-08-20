@@ -211,6 +211,7 @@ namespace FlaxEngine
             }
         }
 
+        #region Operators
         /// <summary>
         /// Checks if the object exists (reference is not null and the unmanaged object pointer is valid).
         /// </summary>
@@ -249,6 +250,7 @@ namespace FlaxEngine
             IntPtr rightPtr = (object)right != null ? right.__unmanagedPtr : IntPtr.Zero;
             return leftPtr != rightPtr;
         }
+        #endregion
 
         /// <inheritdoc />
         public override bool Equals(object obj)
