@@ -71,7 +71,7 @@ namespace FlaxEngine
     [Serializable]
     [StructLayout(LayoutKind.Sequential)]
 #if FLAX_EDITOR
-    [System.ComponentModel.TypeConverter(typeof(TypeConverters.Vector2Converter))]
+    [TypeConverter(typeof(TypeConverters.Vector2Converter))]
 #endif
     public unsafe partial struct Vector2 : IEquatable<Vector2>, IFormattable
     {
