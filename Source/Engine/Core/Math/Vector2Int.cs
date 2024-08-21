@@ -32,6 +32,15 @@ namespace FlaxEngine
         /// <summary>
         /// Initializes a new instance of the <see cref="Vector2Int" /> struct.
         /// </summary>
+        public Vector2Int()
+        {
+            X = 0;
+            Y = 0;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Vector2Int" /> struct.
+        /// </summary>
         /// <param name="value">The value that will be assigned to all components.</param>
         public Vector2Int(int value)
         {
@@ -68,6 +77,28 @@ namespace FlaxEngine
         {
             X = x;
             Y = y;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Vector2Int" /> struct.
+        /// </summary>
+        /// <param name="x">Initial value for the X component of the vector.</param>
+        /// <param name="y">Initial value for the Y component of the vector.</param>
+        public Vector2Int(float x, float y)
+        {
+            X = (int)x;
+            Y = (int)y;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Vector2Int" /> struct.
+        /// </summary>
+        /// <param name="x">Initial value for the X component of the vector.</param>
+        /// <param name="y">Initial value for the Y component of the vector.</param>
+        public Vector2Int(double x, double y)
+        {
+            X = (int)x;
+            Y = (int)y;
         }
 
         /// <summary>
@@ -113,6 +144,26 @@ namespace FlaxEngine
         /// A <see cref="Vector2Int" /> with all of its components set to zero.
         /// </summary>
         public static readonly Vector2Int Zero = new(0, 0);
+
+        /// <summary>
+        /// Shorthand for writing <see cref="Vector2Int"/>(0, -1).
+        /// </summary>
+        public static readonly Vector2Int Down = new(0, -1);
+
+        /// <summary>
+        /// Shorthand for writing <see cref="Vector2Int"/>(-1, 0).
+        /// </summary>
+        public static readonly Vector2Int left = new(-1, 0);
+
+        /// <summary>
+        /// Shorthand for writing <see cref="Vector2Int"/>(1, 0).
+        /// </summary>
+        public static readonly Vector2Int right = new(1, 0);
+
+        /// <summary>
+        /// Shorthand for writing <see cref="Vector2Int"/>(0, 1).
+        /// </summary>
+        public static readonly Vector2Int Up = new(0, 1);
 
         /// <summary>
         /// The X unit <see cref="Vector2Int" /> (1, 0).
@@ -166,6 +217,24 @@ namespace FlaxEngine
         //{
         //    return new Vector2Int(left.X + right.X, left.Y + right.Y);
         //}
+        #endregion
+
+        #region Properties
+
+        /// <summary>
+        /// Gets a value indicting whether this vector is zero.
+        /// </summary>
+        public bool IsZero => Mathf.IsZero(X) && Mathf.IsZero(Y);
+
+        /// <summary>
+        /// Gets a minimum component value.
+        /// </summary>
+        public int MinValue => Mathf.Min(X, Y);
+
+        /// <summary>
+        /// Gets a maxmum component value.
+        /// </summary>
+        public int MaxValue => Mathf.Max(X, Y);
         #endregion
     }
 }
