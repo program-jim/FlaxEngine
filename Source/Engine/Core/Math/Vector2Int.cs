@@ -17,6 +17,7 @@ namespace FlaxEngine
     {
         private static readonly string _formatString = "X:{0:F2} Y:{1:F2}";
 
+        
         /// <summary>
         /// The X Component.
         /// </summary>
@@ -25,6 +26,8 @@ namespace FlaxEngine
         /// The Y Component.
         /// </summary>
         public int Y;
+
+        #region Constructors
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Vector2Int" /> struct.
@@ -76,6 +79,28 @@ namespace FlaxEngine
             X = (int)vector.X;
             Y = (int)vector.Y;
         }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Vector2Int" /> struct.
+        /// </summary>
+        /// <param name="vector">A vector containing the values with which to initialize the X and Y components.</param>
+        public Vector2Int(Vector3 vector)
+        {
+            X = (int)vector.X;
+            X = (int)vector.Y;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Vector2Int" /> struct.
+        /// </summary>
+        /// <param name="vector">A vector containing the values with which to initialize the X and Y components.</param>
+        public Vector2Int(Vector4 vector)
+        {
+            X = (int)vector.X;
+            X = (int)vector.Y;
+        }
+
+        #endregion
 
         #region Static Read-Only
 
@@ -137,10 +162,10 @@ namespace FlaxEngine
         #endregion
 
         #region Operators
-        public static Vector2Int operator +(Vector2Int left, Vector2Int right)
-        {
-            return new Vector2Int(left.X + right.X, left.Y + right.Y);
-        }
+        //public static Vector2Int operator +(Vector2Int left, Vector2Int right)
+        //{
+        //    return new Vector2Int(left.X + right.X, left.Y + right.Y);
+        //}
         #endregion
     }
 }
