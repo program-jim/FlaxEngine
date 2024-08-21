@@ -235,6 +235,31 @@ namespace FlaxEngine
         /// Gets a maxmum component value.
         /// </summary>
         public int MaxValue => Mathf.Max(X, Y);
+
+        /// <summary>
+        /// Gets a sum of the component values.
+        /// </summary>
+        public int ValueSum => X + Y;
+
+        /// <summary>
+        /// Gets a vector with values being absolute values of that vector.
+        /// </summary>
+        public Vector2Int Absolute => new Vector2Int(Mathf.Abs(X), Mathf.Abs(Y));
+
+        /// <summary>
+        /// Gets a vector with values being opposite to values of that vector.
+        /// </summary>
+        public Vector2Int Negative => new Vector2Int(-X, -Y);
+
+        /// <summary>
+        /// Calculates the length of the vector.
+        /// </summary>
+        public float Length => (float)Math.Sqrt(X * X + Y * Y);
+
+        /// <summary>
+        /// Calculates the squared length of the vector.
+        /// </summary>
+        public float LengthSquared => (float)X * X + Y * Y;
         #endregion
     }
 }
