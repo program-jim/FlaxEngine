@@ -363,6 +363,17 @@ namespace FlaxEngine
             return new Vector2Int(left.X - right, left.Y - right);
         }
 
+        /// <summary>
+        /// Scales a vector by the given value.
+        /// </summary>
+        /// <param name="value">The vector to scale.</param>
+        /// <param name="scale">The amount by which to scale the vector.</param>
+        /// <param name="result">When the method completes, contains the scaled vector.</param>
+        public static void Multiply(ref Vector2Int value, float scale, out Vector2Int result)
+        {
+            result = new Vector2Int(value.X * scale, value.Y * scale);
+        }
+
         #endregion
     }
 }
