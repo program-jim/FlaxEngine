@@ -16,7 +16,6 @@ namespace FlaxEngine
     public unsafe partial struct Vector2Int
     {
         private static readonly string _formatString = "X:{0:F2} Y:{1:F2}";
-
         
         /// <summary>
         /// The X Component.
@@ -104,7 +103,7 @@ namespace FlaxEngine
         /// <summary>
         /// Initializes a new instance of the <see cref="Vector2Int" /> struct.
         /// </summary>
-        /// <param name="vector">The Vector2 value to intial.</param>
+        /// <param name="vector">A vector containing the values with which to initialize the X and Y components.</param>
         public Vector2Int(Vector2 vector)
         {
             X = (int)vector.X;
@@ -260,6 +259,110 @@ namespace FlaxEngine
         /// Calculates the squared length of the vector.
         /// </summary>
         public float LengthSquared => (float)X * X + Y * Y;
+        #endregion
+
+        #region Non-static Methods
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Normolize()
+        {
+
+        }
+
+        #endregion
+
+        #region Static Methods
+
+        /// <summary>
+        /// Adds two vectors.
+        /// </summary>
+        /// <param name="left">The first vector to add.</param>
+        /// <param name="right">The second vector to add.</param>
+        /// <param name="result">When the method completes, contains the sum of the two vectors.</param>
+        public static void Add(ref Vector2Int left, ref Vector2Int right, out Vector2Int result)
+        {
+            result = new Vector2Int(left.X + right.X, left.Y + right.Y);
+        }
+
+        /// <summary>
+        /// Adds two vectors
+        /// </summary>
+        /// <param name="left">The first vector to add.</param>
+        /// <param name="right">The second vector to add.</param>
+        /// <returns>The sum of the two vectors.</returns>
+        public static Vector2Int Add(Vector2Int left,  Vector2Int right)
+        {
+            return new Vector2Int(left.X + right.X, left.Y + right.Y);
+        }
+
+        /// <summary>
+        /// Performs a component-wise addition.
+        /// </summary>
+        /// <param name="left">The input vector</param>
+        /// <param name="right">The scalar value to be added to elements</param>
+        /// <param name="result">The vector with added scalar for each element.</param>
+        public static void Add(ref Vector2Int left, ref float right, out Vector2Int result)
+        {
+            result = new Vector2Int(left.X + right, left.Y + right);
+        }
+
+        /// <summary>
+        /// Performs a component-wise addition.
+        /// </summary>
+        /// <param name="left">The input vector</param>
+        /// <param name="right">The scalar value to be added to elements</param>
+        /// <returns>The vector with added scalar for each element.</returns>
+        public static Vector2Int Add(Vector2Int left,  float right)
+        {
+            return new Vector2Int(left.X + right, left.Y + right);
+        }
+
+        /// <summary>
+        /// Subtracts two vectors.
+        /// </summary>
+        /// <param name="left">The first vector to subtract.</param>
+        /// <param name="right">The second vector to subtract.</param>
+        /// <param name="result">When the method completes, contains the difference of the two vectors.</param>
+        public static void Subtract(ref Vector2Int left, ref Vector2Int right, out Vector2Int result)
+        {
+            result = new Vector2Int(left.X - right.X, left.Y - right.Y);
+        }
+
+        /// <summary>
+        /// Subtracts two vectors.
+        /// </summary>
+        /// <param name="left">The first vector to subtract.</param>
+        /// <param name="right">The second vector to subtract.</param>
+        /// <returns>The difference of the two vectors.</returns>
+        public static Vector2Int Subtract(Vector2Int left, Vector2Int right)
+        {
+            return new Vector2Int(left.X - right.X, left.Y - right.Y);
+        }
+
+        /// <summary>
+        /// Performs a component-wise subtraction.
+        /// </summary>
+        /// <param name="left">The input vector</param>
+        /// <param name="right">The scalar value to be subtracted from elements</param>
+        /// <param name="result">The vector with subtracted scalar for each element.</param>
+        public static void Subtract(ref Vector2Int left, ref float right, out Vector2Int result)
+        {
+            result = new Vector2Int(left.X - right, left.Y - right);
+        }
+
+        /// <summary>
+        /// Performs a component-wise subtraction.
+        /// </summary>
+        /// <param name="left">The input vector</param>
+        /// <param name="right">The scalar value to be subtracted from elements</param>
+        /// <returns>The vector with subtracted scalar for each element.</returns>
+        public static Vector2Int Subtract(Vector2Int left, float right)
+        {
+            return new Vector2Int(left.X - right, left.Y - right);
+        }
+
         #endregion
     }
 }

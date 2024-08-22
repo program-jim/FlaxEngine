@@ -323,7 +323,7 @@ namespace FlaxEngine
         /// </summary>
         public Real[] ToArray()
         {
-            return new[] { X, Y };
+            return [X, Y];
         }
 
         /// <summary>
